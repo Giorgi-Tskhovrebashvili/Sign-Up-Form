@@ -8,12 +8,14 @@ const Input = ({
   onChange,
   onBlur,
   id,
+  name,
   style,
 }: InputType) => {
   return (
     <input
       className={className}
       id={id}
+      name={name}
       type={type}
       placeholder={placeholder}
       value={value}

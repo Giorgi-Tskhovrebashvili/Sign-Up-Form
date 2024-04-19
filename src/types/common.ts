@@ -12,6 +12,7 @@ export interface InputType {
   onChange: (event: any) => void;
   onBlur: (event: any) => void;
   id: string;
+  name: string;
   style: Object;
 }
 

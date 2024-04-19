@@ -2,6 +2,7 @@ import { Button, Input, Intro, Notification, Warning } from "..";
 import { useFormik } from "formik";
 import { validationSchema } from "../../utils/validation-schema";
 import icon from "../../assets/Image/Group 11.png";
+import { useEffect, useState } from "react";
 
 const SignUpForm = () => {
   const formik = useFormik({
@@ -41,7 +42,7 @@ const SignUpForm = () => {
               className={
                 "w-[279px] h-[56px] border-solid border-2 border-gray-300 rounded-[10px] px-[15px] py-[15px] xl:w-[460px]"
               }
-              id={"first-name"}
+              id={"firstName"}
               type={"text"}
               placeholder={"First Name"}
               value={values.firstName}
@@ -50,8 +51,9 @@ const SignUpForm = () => {
                 borderColor: touched.firstName && errors.firstName ? "red" : "",
               }}
               onBlur={handleBlur}
+              name={"firstName"}
             />
-            {touched.firstName && errors.firstName ? (
+            {errors.firstName && touched.firstName ? (
               <div className="text-[#FF7979] text-[11px] font-medium leading-[16.5px] italic flex">
                 {errors.firstName}{" "}
                 <img
@@ -67,7 +69,7 @@ const SignUpForm = () => {
               className={
                 "w-[279px] h-[56px] border-solid border-2 border-gray-300 rounded-[10px] px-[15px] py-[15px] xl:w-[460px]"
               }
-              id={"last-name"}
+              id={"lastName"}
               type={"text"}
               placeholder={"Last Name"}
               value={values.lastName}
@@ -76,8 +78,9 @@ const SignUpForm = () => {
                 borderColor: touched.firstName && errors.firstName ? "red" : "",
               }}
               onBlur={handleBlur}
+              name={"lastName"}
             />
-            {touched.lastName && errors.lastName ? (
+            {errors.lastName && touched.lastName ? (
               <div className="text-[#FF7979] text-[11px] font-medium leading-[16.5px] italic flex">
                 {errors.lastName}{" "}
                 <img
@@ -102,8 +105,9 @@ const SignUpForm = () => {
                 borderColor: touched.firstName && errors.firstName ? "red" : "",
               }}
               onBlur={handleBlur}
+              name={"email"}
             />
-            {touched.email && errors.email ? (
+            {errors.email && touched.email ? (
               <div className="text-[#FF7979] text-[11px] font-medium leading-[16.5px] italic flex">
                 {errors.email}{" "}
                 <img
@@ -128,8 +132,9 @@ const SignUpForm = () => {
                 borderColor: touched.firstName && errors.firstName ? "red" : "",
               }}
               onBlur={handleBlur}
+              name={"password"}
             />
-            {touched.password && errors.password ? (
+            {errors.password && touched.password ? (
               <div className="text-[#FF7979] text-[11px] font-medium leading-[16.5px] italic flex">
                 {errors.password}{" "}
                 <img

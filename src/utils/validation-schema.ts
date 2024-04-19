@@ -11,6 +11,6 @@ export const validationSchema = Yup.object({
     .email("Invalid email address")
     .required("Looks like this is not an email"),
   password: Yup.string()
-    .max(8, "Must be 8 characters or less")
+    .min(8, "Must be 8 characters or less")
     .required("Password cannot be empty"),
 });
