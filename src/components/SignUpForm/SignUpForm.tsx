@@ -2,7 +2,6 @@ import { Button, Input, Intro, Notification, Warning } from "..";
 import { useFormik } from "formik";
 import { validationSchema } from "../../utils/validation-schema";
 import icon from "../../assets/Image/Group 11.png";
-import { useEffect, useState } from "react";
 
 const SignUpForm = () => {
   const formik = useFormik({
